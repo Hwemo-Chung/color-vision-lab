@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color Vision Lab - 색약 체험과 색각 테스트</title>
+  <meta name="description" content="사진에 색약·색맹 시뮬레이션을 적용해 보고, 13장의 도판으로 간단한 색각 선별 테스트를 해 보세요. 모든 처리는 브라우저 안에서만 이루어집니다." data-i18n-content="meta.description">
+  <meta name="theme-color" content="#14161c">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Color Vision Lab">
+  <meta property="og:title" content="Color Vision Lab - 색약 체험과 색각 테스트" data-i18n-content="meta.title">
+  <meta property="og:description" content="사진에 색약·색맹 시뮬레이션을 적용해 보고, 13장의 도판으로 간단한 색각 선별 테스트를 해 보세요. 모든 처리는 브라우저 안에서만 이루어집니다." data-i18n-content="meta.description">
+  <link rel="canonical" href="https://color-vision-lab.vercel.app/">
+  <meta property="og:url" content="https://color-vision-lab.vercel.app/">
+  <link rel="alternate" hreflang="ko" href="https://color-vision-lab.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://color-vision-lab.vercel.app/?lang=en">
+  <link rel="alternate" hreflang="ja" href="https://color-vision-lab.vercel.app/?lang=ja">
+  <link rel="alternate" hreflang="x-default" href="https://color-vision-lab.vercel.app/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314161c'/%3E%3Ccircle cx='12' cy='13' r='7' fill='%23e8a33d' fill-opacity='.9'/%3E%3Ccircle cx='20' cy='13' r='7' fill='%234c8dff' fill-opacity='.9'/%3E%3Ccircle cx='16' cy='20' r='7' fill='%23c9c4ff' fill-opacity='.9'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script type="module" src="/src/ui/main.js"></script>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
+  <a class="skip" href="#main" data-i18n="a11y.skip">본문으로 건너뛰기</a>
+
+  <header class="nav glass" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="7" fill="#e8a33d" fill-opacity=".9"/><circle cx="20" cy="13" r="7" fill="#4c8dff" fill-opacity=".9"/><circle cx="16" cy="20" r="7" fill="#c9c4ff" fill-opacity=".9"/></svg>
+        <span data-i18n="brand.name">Color Vision Lab</span>
+      </a>
+      <nav class="nav-links" aria-label="주요 메뉴" data-i18n-attr="aria-label:nav.label">
+        <a href="#simulator" data-i18n="nav.simulator">체험</a>
+        <a href="#test" data-i18n="nav.test">테스트</a>
+      </nav>
+      <div class="lang" role="group" aria-label="언어 선택" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-lang="ko" lang="ko" aria-label="한국어" data-i18n-attr="aria-label:lang.name.ko" aria-pressed="true">KO</button>
+        <button type="button" data-lang="en" lang="en" aria-label="English" data-i18n-attr="aria-label:lang.name.en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ja" lang="ja" aria-label="日本語" data-i18n-attr="aria-label:lang.name.ja" aria-pressed="false">JA</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" data-i18n="hero.title">색약 체험과 색각 테스트</h1>
+      <p class="lead" data-i18n="hero.lead">사진에 색각 유형별 변환을 적용해 보고, 13장의 도판으로 간단한 색각 선별 테스트를 해 볼 수 있습니다. 모든 처리는 브라우저 안에서만 이루어집니다.</p>
+      <aside class="notice glass" role="note">
+        <svg class="ico" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <div>
+          <strong data-i18n="hero.disclaimer.title">선별 보조 도구이며 진단이 아닙니다</strong>
+          <p data-i18n="hero.disclaimer.body">결과는 화면의 종류와 밝기, 주변 조명에 따라 달라질 수 있습니다. 정확한 평가는 안과 전문의 등 전문가에게 받으시기 바랍니다.</p>
+        </div>
+      </aside>
+      <div class="cta">
+        <a class="btn" href="#simulator" data-i18n="hero.cta.sim">사진으로 체험</a>
+        <a class="btn primary" href="#test" data-i18n="hero.cta.test">테스트 시작</a>
+      </div>
+    </section>
+
+    <!-- 1. Simulator -->
+    <section id="simulator" class="panel glass" aria-labelledby="sim-title">
+      <h2 id="sim-title" class="sec-title" data-i18n="sim.title">1. 색약 체험</h2>
+
+      <div class="chips" id="chips" role="group" aria-label="색각 유형 선택" data-i18n-attr="aria-label:sim.presets.label"></div>
+
+      <div class="controls">
+        <div class="ctl ctl-slider">
+          <label for="severity" data-i18n="sim.severity">강도</label>
+          <div class="slider-row">
+            <input type="range" id="severity" min="0" max="100" step="1" value="80">
+            <output id="severity-out" for="severity">80%</output>
+          </div>
+        </div>
+        <div class="ctl">
+          <label for="sample" data-i18n="sim.sample">샘플 이미지</label>
+          <select id="sample" class="field"></select>
+        </div>
+        <div class="ctl ctl-upload">
+          <button type="button" class="btn" id="upload-btn" data-i18n="sim.upload">사진 업로드</button>
+          <input type="file" id="file" accept="image/*" hidden>
+        </div>
+      </div>
+      <p class="note" id="privacy" data-i18n="sim.privacy">사진은 브라우저 안에서만 처리되며 서버로 전송되지 않습니다.</p>
+      <p class="status" id="sim-status" role="status" aria-live="polite" hidden></p>
+
+      <!-- Opaque neutral well. Nothing is layered on the canvas. -->
+      <div class="well" id="sim-well">
+        <div class="well-labels" aria-hidden="true">
+          <span data-i18n="sim.original">원본</span>
+          <span data-i18n="sim.simulated">시뮬레이션</span>
+        </div>
+        <div class="stage" id="stage" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal">
+          <canvas id="sim-canvas" aria-hidden="true"></canvas>
+        </div>
+        <p class="well-hint" data-i18n="sim.stage.hint">비교선을 끌거나 좌우 화살표 키로 움직일 수 있습니다.</p>
+        <p class="well-hint" data-i18n="sim.drop">이미지 파일을 이 영역에 끌어다 놓을 수도 있습니다.</p>
+      </div>
+
+      <div class="sim-foot">
+        <p class="current" id="current" aria-live="polite"></p>
+        <button type="button" class="btn" id="download" data-i18n="sim.download">시뮬레이션 이미지 저장</button>
+      </div>
+    </section>
+
+    <!-- 2. Test -->
+    <section id="test" class="panel glass solid-ish" aria-labelledby="test-title">
+      <div class="sec-head">
+        <h2 id="test-title" class="sec-title" data-i18n="test.title">2. 색각 테스트</h2>
+        <p class="progress" id="progress" aria-live="polite" aria-atomic="true" hidden></p>
+      </div>
+
+      <div id="test-intro">
+        <h3 data-i18n="test.intro.title">시작하기 전에</h3>
+        <ul class="checklist">
+          <li data-i18n="test.intro.item1">화면 밝기를 높여 주세요.</li>
+          <li data-i18n="test.intro.item2">야간 모드, True Tone, 다크 리더 등 화면 색을 바꾸는 기능을 끄세요.</li>
+          <li data-i18n="test.intro.item3">화면에서 팔을 뻗은 정도의 거리를 두고 보세요.</li>
+          <li data-i18n="test.intro.item4">한 장당 몇 초 안에 직관적으로 답해 주세요. 숫자가 보이지 않으면 "안 보임"을 누르세요.</li>
+        </ul>
+        <p class="note" id="intro-note">도판은 총 13장입니다.</p>
+        <button type="button" class="btn primary" id="start" data-i18n="test.start">테스트 시작</button>
+      </div>
+
+      <div id="test-run" hidden>
+        <div class="well well-plate">
+          <div class="plate-box" id="plate-box"><canvas id="plate-canvas" role="img"></canvas></div>
+        </div>
+        <form id="answer-form" class="answer" autocomplete="off" novalidate>
+          <label for="answer" data-i18n="test.answer.label">보이는 숫자 (최대 2자리)</label>
+          <div class="answer-row">
+            <input class="field num" id="answer" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="2" enterkeyhint="next" autocomplete="off">
+            <button type="button" class="btn" id="cantsee" data-i18n="test.cantsee">안 보임</button>
+            <button type="submit" class="btn primary" id="next" data-i18n="test.next">다음</button>
+          </div>
+          <p class="status" id="answer-hint" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+
+      <div id="test-result" aria-live="polite" hidden></div>
+    </section>
+
+    <!-- 3. Explanation -->
+    <section id="explain" class="explain" aria-labelledby="expl-title">
+      <h2 id="expl-title" class="sec-title" data-i18n="expl.title">3. 색각 유형 안내</h2>
+      <p class="lead small" data-i18n="expl.intro">적록 계열 색각 이상은 북유럽계 남성의 약 8%, 여성의 약 0.5%에서 나타나는 것으로 알려져 있습니다. 이 값은 대략적인 수치이며 집단에 따라 다릅니다.</p>
+      <div class="cards">
+        <article class="card glass">
+          <h3 data-i18n="expl.protan.title">적색약 · 적색맹 (1형)</h3>
+          <p data-i18n="expl.protan.body">장파장에 반응하는 L 원추세포의 기능이 약하거나 없는 유형입니다. 붉은색이 어둡게 보이고, 빨강과 초록, 주황과 갈색 등을 구별하기 어려울 수 있습니다.</p>
+          <p class="prev" data-i18n="expl.protan.prev">적록 계열 이상에 포함되며, 적록 계열 전체의 대략적인 빈도는 위와 같습니다.</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="expl.deutan.title">녹색약 · 녹색맹 (2형)</h3>
+          <p data-i18n="expl.deutan.body">중파장에 반응하는 M 원추세포의 기능이 약하거나 없는 유형입니다. 빨강과 초록 계열이 서로 비슷하게 보이며, 적록 계열 가운데 흔한 편으로 알려져 있습니다.</p>
+          <p class="prev" data-i18n="expl.deutan.prev">적록 계열 이상에 포함되며, 적록 계열 전체의 대략적인 빈도는 위와 같습니다.</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="expl.tritan.title">청색약 · 청색맹 (3형)</h3>
+          <p data-i18n="expl.tritan.body">단파장에 반응하는 S 원추세포의 기능에 문제가 있는 유형입니다. 파랑과 초록, 노랑과 보라 등을 구별하기 어려울 수 있습니다.</p>
+          <p class="prev" data-i18n="expl.tritan.prev">드문 유형입니다.</p>
+        </article>
+        <article class="card glass">
+          <h3 data-i18n="expl.achroma.title">전색맹 · 부분 전색맹</h3>
+          <p data-i18n="expl.achroma.body">원추세포의 기능이 거의 없거나 전혀 없어서 색을 거의 구별하지 못하고 밝고 어두움 위주로 보는 유형입니다. 눈부심이나 시력 저하가 함께 나타나는 경우가 많습니다.</p>
+          <p class="prev" data-i18n="expl.achroma.prev">매우 드문 유형입니다.</p>
+        </article>
+      </div>
+      <div class="sources">
+        <h3 data-i18n="expl.sources.title">출처</h3>
+        <p data-i18n="expl.sources.body">시뮬레이션 모델: Machado, Oliveira &amp; Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency", IEEE Transactions on Visualization and Computer Graphics.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p data-i18n="footer.disclaimer">이 사이트는 선별 보조 도구이며 의학적 진단을 제공하지 않습니다. 결과는 화면과 조명 환경에 따라 달라집니다. 정확한 평가는 안과 전문의 등 전문가에게 받으시기 바랍니다.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

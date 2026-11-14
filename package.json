@@ -1,0 +1,14 @@
+{
+  "name": "color-vision-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Colour-vision screening test and colour-vision-deficiency simulator (static site, no build step).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.js\"",
+    "derive-palettes": "node src/core/derive-palettes.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
