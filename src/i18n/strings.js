@@ -110,6 +110,17 @@ const ko = {
   'expl.sources.title': '출처',
   'expl.sources.body': '시뮬레이션 모델: Machado, Oliveira & Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency", IEEE Transactions on Visualization and Computer Graphics.',
   'footer.disclaimer': '이 사이트는 선별 보조 도구이며 의학적 진단을 제공하지 않습니다. 결과는 화면과 조명 환경에 따라 달라집니다. 정확한 평가는 안과 전문의 등 전문가에게 받으시기 바랍니다.',
+
+  // Footer links to the maker's other work. Plain links only: nothing loads from another origin and
+  // nothing is tracked. The two Korean-only pages say so, so nobody lands on them by surprise.
+  'more.title': '만든 사람의 다른 작업',
+  'more.lead': '이 사이트는 Lumos가 만들었습니다. 브라우저 안에서만 도는 다른 도구도 있습니다.',
+  'more.tools': '브라우저 도구 모음 (한국어)',
+  'more.color': '색상 선택기 (한국어)',
+  'more.portfolio': '작업 노트와 서비스 소개',
+  'more.toolsHref': 'https://hwemo-chung.github.io/tools/',
+  'more.colorHref': 'https://hwemo-chung.github.io/color-picker.html',
+  'more.portfolioHref': 'https://hwemo-chung.github.io/',
 };
 
 const en = {
@@ -221,6 +232,15 @@ const en = {
   'expl.sources.title': 'Sources',
   'expl.sources.body': 'Simulation model: Machado, Oliveira & Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency", IEEE Transactions on Visualization and Computer Graphics.',
   'footer.disclaimer': 'This site is a screening aid and does not provide a medical diagnosis. Results depend on your display and lighting. For a proper assessment, please see an eye-care professional.',
+
+  'more.title': 'More from the maker',
+  'more.lead': 'This site is made by Lumos. There are other tools that run entirely in the browser.',
+  'more.tools': 'Browser tools (in Korean)',
+  'more.color': 'Colour picker (in Korean)',
+  'more.portfolio': 'Notes and services',
+  'more.toolsHref': 'https://hwemo-chung.github.io/tools/',
+  'more.colorHref': 'https://hwemo-chung.github.io/color-picker.html',
+  'more.portfolioHref': 'https://hwemo-chung.github.io/?lang=en',
 };
 
 const ja = {
@@ -332,6 +352,15 @@ const ja = {
   'expl.sources.title': '出典',
   'expl.sources.body': 'シミュレーションモデル: Machado, Oliveira & Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency", IEEE Transactions on Visualization and Computer Graphics。',
   'footer.disclaimer': '本サイトはスクリーニングの補助であり、医学的な診断を行うものではありません。結果はディスプレイや照明環境によって変わります。正確な評価は眼科医などの専門家に受けてください。',
+
+  'more.title': '制作した他のもの',
+  'more.lead': 'このサイトは Lumos が制作しています。ブラウザの中だけで動く他のツールもあります。',
+  'more.tools': 'ブラウザツール集（韓国語）',
+  'more.color': 'カラーピッカー（韓国語）',
+  'more.portfolio': '制作メモとサービス紹介',
+  'more.toolsHref': 'https://hwemo-chung.github.io/tools/',
+  'more.colorHref': 'https://hwemo-chung.github.io/color-picker.html',
+  'more.portfolioHref': 'https://hwemo-chung.github.io/?lang=ja',
 };
 
 export const STRINGS = { ko, en, ja };
